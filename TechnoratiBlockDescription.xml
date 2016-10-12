@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<block class="TechnoratiClass">
+  <providerName>Technorati</providerName>
+  <providerUrl>http://www.technorati.com/</providerUrl>
+  <providerLogoUrl>/content/components/icons/block.png</providerLogoUrl>
+  <blockIconUrl>/content/components/icons/block.png</blockIconUrl>
+  <keys>
+    <description/>
+    <signUpUrl>http://technorati.com/developers/apikey.html</signUpUrl>
+    <key id="key" whenRequired="save">
+      <name>API Key</name>
+      <notes/>
+    </key>
+  </keys>
+  <operations>
+    <operation name="getSearchResults" callMode="auto">
+      <description>Blog posts featuring a given keyword or phrase(Items Only) Returned in RSS format.</description>
+      <inputs>
+        <input name="query" required="true" type="string">
+          <description>Set this to the words you are searching for.</description>
+          <defaultValue>Popfly</defaultValue>
+          <constraints/>
+        </input>
+      </inputs>
+      <outputs>
+        <output isArray="true" type="custom" object="RSSItem"/>
+      </outputs>
+    </operation>
+  </operations>
+  <objects>
+    <object name="RSSItem">
+      <field name="title" type="title" isArray="false"/>
+      <field name="link" type="url" isArray="false"/>
+      <field name="description" type="description" isArray="false"/>
+      <field name="source" type="string" isArray="false"/>
+      <field name="sourceLink" type="url" isArray="false"/>
+      <field name="author" type="name" isArray="false"/>
+      <field name="tags" type="string" isArray="false"/>
+      <field name="comments" type="string" isArray="false"/>
+      <field name="commentRss" type="string" isArray="false"/>
+      <field name="publishedDate" type="date" isArray="false"/>
+      <field name="mediaLink" type="url" isArray="false"/>
+      <field name="mediaType" type="string" isArray="false"/>
+      <field name="latitude" type="latitude" isArray="false"/>
+      <field name="longtitude" type="longitude" isArray="false"/>
+    </object>
+  </objects>
+</block>
